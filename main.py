@@ -9,22 +9,6 @@ podium = []
 cars = {}
 
 
-#  while True:
-#         command = str(input('''que deseas hacer
-
-#         [p]render
-#         [a]pagar
-#         [s]alir
-#     '''))
-
-#         if command == 'p':
-#             lamp.turn_on()
-#         elif command == 'a':
-#             lamp.turn_off()
-#         else: 
-#             break   
-
-
 
 def run ():
     while True:   
@@ -67,6 +51,10 @@ def run ():
             trackmetters = track.convertKmMetter()
                 
             print(f'la distancia de la carrera es de {trackmetters} Mts')
+            print(""" 
+            
+             """)
+                    
         
         
         elif opcion == 3:
