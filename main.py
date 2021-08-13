@@ -1,3 +1,4 @@
+
 from track import Track
 from driver import Driver
 from car import Car
@@ -12,7 +13,7 @@ cars = {}
 
 def run ():
     while True:   
-        print("""Bienbenido al juego de carreras.
+        print("""Bienvenido al juego de carreras.
         ESCOGE UNA OPCION: 
 
         1) Ingresa la cantidad de jugadores
@@ -26,7 +27,7 @@ def run ():
             print("ingresa la cantidad: ")
             countplayers = int(input())
             count = 1
-         
+            
 
             while(countplayers != 0):
                 name = input(f'ingresa el nombre del conductor # {count}: ')
@@ -59,12 +60,28 @@ def run ():
         
         elif opcion == 3:
             print("""A JUGAR""")
-         
-         
-            while (len(podium) ==3):
+            play = {}
 
-                for i in players:  
-                    pass                              
+            while (len(podium) != 3):
+                for i in players:
+                    aleatorinumber = Dice.randomnumber()
+                    movimentcar = i.movecar(aleatorinumber)
+                    print(f'sacaste {aleatorinumber} el vehiculo de  avanzara {movimentcar} metros')
+                    play[i] = movimentcar 
+
+                for i in play.keys():
+                    print (i)
+            
+                
+                 
+            # while (len(podium) != 3):
+
+            #     for i in players:  
+            #         x = i.movecar(Dice.randomnumber())
+            #         print("sacaste {x}")
+            #         podium.append(x)
+
+
          
         elif opcion ==4:
             pass
