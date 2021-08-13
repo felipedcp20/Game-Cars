@@ -1,12 +1,11 @@
 class Driver:
 
-    def __init__ (self):
-        pass
-
-    def namedriver (self,name):
+    def __init__ (self,name):
         self.name = name
 
-    def printdriver (self,Driver):
+    
+
+    def printdriver (self):
         return print(f'hola: {self.name}')
 
 

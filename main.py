@@ -1,4 +1,5 @@
 
+from dice import Dice
 from track import Track
 from driver import Driver
 from car import Car
@@ -35,21 +36,26 @@ def run ():
              countplayers -=1
 
          print(f'se añadieron con exito los {len(players)} conductores')
-
-                                    
+        
+                        
            
 
      elif opcion == 2:
 
         distance = int(input("ingresa la distancia en KM: "))
-        track = Track.convertKmMetter(distance)
+        track = Track(distance)
+        trackmetters = track.convertKmMetter()
         
-        print(f'la distancia en metros de la carrera es de {track}')
         
-
-
+        print(f'la distancia de la carrera es de {trackmetters} Mts')
+        
         pass
      elif opcion == 3:
+
+         dice = Dice()
+         print(dice.randomnumber())   
+         
+        
          pass
      elif opcion ==4:
          pass
