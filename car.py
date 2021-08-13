@@ -1,24 +1,23 @@
-class Car:
+from driver import Driver
+
+
+class Car (Driver):
     
-    def __init__(self,driver):
-        pass
+    def __init__(self,driver,marca):
+        self.driver = driver
+        self.marca = marca
 
     def movecar (self,NumberDice):
         return NumberDice * 100
 
+  
+    def printmodel(self):
+        return f'modelo: {self.marca}'
         
 
-    def models (self):
-        model = {1: "Renault",
-        2: "Mercedes",
-        3: "Bmw"}
+        
 
-    def conteo (numero): 
-        conteonumero = {}
-        if (conteonumero[numero]):
-            conteonumero[numero] +=1
-        else:
-            conteonumero[numero] = 1
+       
     
         
     
