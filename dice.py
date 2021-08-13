@@ -9,4 +9,3 @@ class Dice:
         
         number = random.randint(1,6)
         return number
-<

@@ -1,11 +1,13 @@
-
-from dice import Dice
 from track import Track
 from driver import Driver
 from car import Car
+from dice import Dice
 
 
 players = []
+podium = []
+cars = {}
+
 
 
 
@@ -30,14 +32,18 @@ def run ():
 
          while(countplayers != 0):
              name = input(f'ingresa el nombre del conductor # {count}: ')
-             instan = Driver()
-             players.append(instan.namedriver(name))
+             instan = Driver(name)
+             players.append(instan)
              count +=1
              countplayers -=1
 
          print(f'se añadieron con exito los {len(players)} conductores')
-        
-                        
+         
+         print(players)
+         for i in players:
+             print(i.printdriver())
+
+
            
 
      elif opcion == 2:
@@ -49,16 +55,25 @@ def run ():
         
         print(f'la distancia de la carrera es de {trackmetters} Mts')
         
-        pass
+        
      elif opcion == 3:
+         print("""A JUGAR""")
+         
+         
+         while (len(podium) ==3):
 
-         dice = Dice()
-         print(dice.randomnumber())   
+             for i in players:
+                 pass
+                                
+                 
+             
+                       
          
         
-         pass
+         
      elif opcion ==4:
          pass
+
      else:
          print("escoge una opcion correcta")
     
