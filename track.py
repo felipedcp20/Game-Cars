@@ -7,7 +7,14 @@ class Track:
     def convertKmMetter(self):
         return (self.distancia*1000)
 
-    def carril (self,distanciapista,carro):
-        pass
+    def advance (self,finish,route):
+        self.route  = route
+        self.finish = finish
+        counter = 0;
+        if  counter >= finish :
+            return True
+        else:
+            counter = counter + route
+        
 
     
