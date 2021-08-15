@@ -60,31 +60,37 @@ def run ():
         
         elif opcion == 3:
             print("""A JUGAR""")
-            play = {}
+            objetc = []
+            counter = []
 
-            while (len(podium) != 3):
+            while (len(podium) <  3):
+                
                 for i in players:
                     aleatorinumber = Dice.randomnumber()
                     movimentcar = i.movecar(aleatorinumber)
                     print(f'sacaste {aleatorinumber} el vehiculo de  avanzara {movimentcar} metros')
-                    play[i] = movimentcar 
 
-                for i in play.keys():
-                    print (i)
-            
-                
-                 
-            # while (len(podium) != 3):
+                                     
+                    if i in objetc:
+                        
+                        counter[i] = counter[i] + movimentcar
+                    else:
+                        objetc.append(i)
+                        counter.append(i)
 
-            #     for i in players:  
-            #         x = i.movecar(Dice.randomnumber())
-            #         print("sacaste {x}")
-            #         podium.append(x)
+                    if (counter[i] >= trackmetters):
+                        podium.append(objetc)
+                    
 
+                           
+                     
+                  
 
+                   
+                        
          
         elif opcion ==4:
-            pass
+            print(podium)
         elif opcion ==5:
             break
 

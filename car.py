@@ -15,7 +15,14 @@ class Car (Driver):
         return f'modelo: {self.marca}'
         
 
-        
+    def advance (self,finish,route):
+        self.route  = route
+        self.finish = finish
+        counter = 0
+        if  counter >= finish :
+            return True
+        else:
+            counter = counter + route     
 
        
     
