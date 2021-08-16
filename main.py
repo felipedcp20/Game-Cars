@@ -19,7 +19,8 @@ def run ():
         1) Ingresa la cantidad de jugadores
         2) Ingresa la distancia de la pista
         3) A jugar
-        4) Imprimir podio: """)
+        4) Imprimir podio:
+        5) Salir del juego """)
 
         opcion = int(input())
         if opcion == 1:
@@ -33,11 +34,11 @@ def run ():
                 name = input(f'ingresa el nombre del conductor # {count}: ')
                 instan = Driver(name)
                 model = input("ingrese la marca de su vehiculo: ")
-                car = Car(instan,model)
+                car = Car(instan.name,model)
                 players.append(car)
                 count +=1
                 countplayers -=1
-                print(f'se añadio el conductor {name} para el vehiculo {model}')
+                print(f'se añadio el conductor {car.driver} para el vehiculo {car.marca}')
             
             print(f'se añadieron con exito los {len(players)} conductores')
             print(""" 
@@ -60,37 +61,46 @@ def run ():
         
         elif opcion == 3:
             print("""A JUGAR""")
-            objetc = []
-            counter = []
+            distanceplayers = {}
+            
 
             while (len(podium) <  3):
+
+                if (len(podium)< 3):
+                        print(" AUN NO LLEGADO NADIE ANIMO 🏎️🏎️🏎️")
                 
                 for i in players:
+
                     aleatorinumber = Dice.randomnumber()
                     movimentcar = i.movecar(aleatorinumber)
-                    print(f'sacaste {aleatorinumber} el vehiculo de  avanzara {movimentcar} metros')
+                    print(f'sacaste {aleatorinumber} el vehiculo de {i.driver} avanzara {movimentcar} metros')
+                    
+                    namedriver = i.driver
 
-                                     
-                    if i in objetc:
-                        
-                        counter[i] = counter[i] + movimentcar
+                    if (namedriver in distanceplayers):
+                        value = distanceplayers.get(namedriver)
+                        actualice = value + movimentcar
+                        distanceplayers.update({namedriver:actualice})
+                        if actualice >= trackmetters:
+                            podium.append(namedriver)
+                            del distanceplayers[namedriver]
                     else:
-                        objetc.append(i)
-                        counter.append(i)
-
-                    if (counter[i] >= trackmetters):
-                        podium.append(objetc)
+                        distanceplayers[namedriver] = movimentcar
+                    
+                    
+                    
+                    
                     
 
-                           
-                     
+                                     
+                                 
                   
-
-                   
-                        
-         
         elif opcion ==4:
-            print(podium)
+            print(f""" FELICIDADES A LOS GANADORES: 🏎️🚀🚀🚀 
+                 1er Lugar:  {podium[0]}
+                 2do Lugar:  {podium[1]}  
+                 3er Lugar:  {podium[2]}      """)
+
         elif opcion ==5:
             break
 
